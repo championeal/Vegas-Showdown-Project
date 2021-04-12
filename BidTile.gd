@@ -10,7 +10,6 @@ var styleBox = StyleBoxFlat.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	add_to_group("bidTiles")
 	$BidPanel.set('custom_styles/panel', styleBox)
 	styleBox.set_bg_color(Color("#fff"))
 

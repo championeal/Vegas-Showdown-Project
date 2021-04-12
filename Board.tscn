@@ -1,7 +1,20 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://BidTile.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Board.gd" type="Script" id=2]
+[ext_resource path="res://fonts/Domine-Regular.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 40
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 40
+font_data = ExtResource( 3 )
 
 [node name="Board" type="Control"]
 anchor_right = 1.0
@@ -11,36 +24,196 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BidTile" parent="." instance=ExtResource( 1 )]
-
-[node name="BidTile2" parent="." instance=ExtResource( 1 )]
-margin_top = 64.0
-margin_bottom = 128.0
-
-[node name="BidTile3" parent="." instance=ExtResource( 1 )]
-margin_top = 128.0
-margin_bottom = 192.0
-
-[node name="BidTile4" parent="." instance=ExtResource( 1 )]
-margin_top = 192.0
-margin_bottom = 256.0
-
-[node name="BidTile5" parent="." instance=ExtResource( 1 )]
-margin_top = 256.0
-margin_bottom = 320.0
-
 [node name="Button" type="Button" parent="."]
 margin_left = 256.0
-margin_top = 120.0
+margin_top = 384.0
 margin_right = 360.0
-margin_bottom = 192.0
+margin_bottom = 456.0
 text = "reset"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="bid_placed" from="BidTile" to="." method="_on_bid_placed"]
-[connection signal="bid_placed" from="BidTile2" to="." method="_on_bid_placed"]
-[connection signal="bid_placed" from="BidTile3" to="." method="_on_bid_placed"]
-[connection signal="bid_placed" from="BidTile4" to="." method="_on_bid_placed"]
-[connection signal="bid_placed" from="BidTile5" to="." method="_on_bid_placed"]
+
+[node name="Slots" type="Control" parent="."]
+margin_right = 128.0
+margin_bottom = 384.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Slots"]
+margin_top = 8.0
+margin_right = 130.0
+margin_bottom = 54.0
+custom_fonts/font = SubResource( 1 )
+text = "SLOTS"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BidTiles" type="Control" parent="Slots"]
+margin_left = 64.0
+margin_top = 64.0
+margin_right = 128.0
+margin_bottom = 384.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="BidTile0" parent="Slots/BidTiles" instance=ExtResource( 1 )]
+
+[node name="BidTile1" parent="Slots/BidTiles" instance=ExtResource( 1 )]
+margin_top = 64.0
+margin_bottom = 128.0
+
+[node name="BidTile2" parent="Slots/BidTiles" instance=ExtResource( 1 )]
+margin_top = 128.0
+margin_bottom = 192.0
+
+[node name="BidTile3" parent="Slots/BidTiles" instance=ExtResource( 1 )]
+margin_top = 192.0
+margin_bottom = 256.0
+
+[node name="BidTile4" parent="Slots/BidTiles" instance=ExtResource( 1 )]
+margin_top = 256.0
+margin_bottom = 320.0
+
+[node name="BidTiles5Player" type="Control" parent="Slots"]
+margin_top = 64.0
+margin_right = 64.0
+margin_bottom = 384.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="BidTile0" parent="Slots/BidTiles5Player" instance=ExtResource( 1 )]
+
+[node name="BidTile1" parent="Slots/BidTiles5Player" instance=ExtResource( 1 )]
+margin_top = 64.0
+margin_bottom = 128.0
+
+[node name="BidTile2" parent="Slots/BidTiles5Player" instance=ExtResource( 1 )]
+margin_top = 128.0
+margin_bottom = 192.0
+
+[node name="BidTile3" parent="Slots/BidTiles5Player" instance=ExtResource( 1 )]
+margin_top = 192.0
+margin_bottom = 256.0
+
+[node name="BidTile4" parent="Slots/BidTiles5Player" instance=ExtResource( 1 )]
+margin_top = 256.0
+margin_bottom = 320.0
+
+[node name="Lounge" type="Control" parent="."]
+margin_left = 192.0
+margin_right = 512.0
+margin_bottom = 128.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Lounge"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -88.0
+margin_top = 8.0
+margin_right = 88.0
+margin_bottom = 54.0
+custom_fonts/font = SubResource( 2 )
+text = "LOUNGE"
+
+[node name="BidTiles" type="Control" parent="Lounge"]
+margin_top = 64.0
+margin_right = 320.0
+margin_bottom = 128.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BidTile0" parent="Lounge/BidTiles" instance=ExtResource( 1 )]
+
+[node name="BidTile1" parent="Lounge/BidTiles" instance=ExtResource( 1 )]
+margin_left = 64.0
+margin_right = 128.0
+
+[node name="BidTile2" parent="Lounge/BidTiles" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_right = 192.0
+
+[node name="BidTile3" parent="Lounge/BidTiles" instance=ExtResource( 1 )]
+margin_left = 192.0
+margin_right = 256.0
+
+[node name="BidTile4" parent="Lounge/BidTiles" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 320.0
+
+[node name="Restaurant" type="Control" parent="."]
+margin_left = 192.0
+margin_top = 192.0
+margin_right = 512.0
+margin_bottom = 320.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="BidTiles" type="Control" parent="Restaurant"]
+margin_top = 64.0
+margin_right = 320.0
+margin_bottom = 128.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BidTile0" parent="Restaurant/BidTiles" instance=ExtResource( 1 )]
+
+[node name="BidTile1" parent="Restaurant/BidTiles" instance=ExtResource( 1 )]
+margin_left = 64.0
+margin_right = 128.0
+
+[node name="BidTile2" parent="Restaurant/BidTiles" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_right = 192.0
+
+[node name="BidTile3" parent="Restaurant/BidTiles" instance=ExtResource( 1 )]
+margin_left = 192.0
+margin_right = 256.0
+
+[node name="BidTile4" parent="Restaurant/BidTiles" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 320.0
+
+[node name="Label" type="Label" parent="Restaurant"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -144.0
+margin_top = 8.0
+margin_right = 136.0
+margin_bottom = 54.0
+custom_fonts/font = SubResource( 3 )
+text = "RESTAURANT"
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="bid_placed" from="Slots/BidTiles/BidTile0" to="." method="_on_bid_placed"]
+[connection signal="bid_placed" from="Slots/BidTiles/BidTile1" to="." method="_on_bid_placed"]
+[connection signal="bid_placed" from="Slots/BidTiles/BidTile2" to="." method="_on_bid_placed"]
+[connection signal="bid_placed" from="Slots/BidTiles/BidTile3" to="." method="_on_bid_placed"]
+[connection signal="bid_placed" from="Slots/BidTiles/BidTile4" to="." method="_on_bid_placed"]
+[connection signal="bid_placed" from="Slots/BidTiles5Player/BidTile0" to="." method="_on_bid_placed"]
+[connection signal="bid_placed" from="Slots/BidTiles5Player/BidTile1" to="." method="_on_bid_placed"]
+[connection signal="bid_placed" from="Slots/BidTiles5Player/BidTile2" to="." method="_on_bid_placed"]
+[connection signal="bid_placed" from="Slots/BidTiles5Player/BidTile3" to="." method="_on_bid_placed"]
+[connection signal="bid_placed" from="Slots/BidTiles5Player/BidTile4" to="." method="_on_bid_placed"]
+[connection signal="bid_placed" from="Lounge/BidTiles/BidTile0" to="." method="_on_bid_placed"]
+[connection signal="bid_placed" from="Lounge/BidTiles/BidTile1" to="." method="_on_bid_placed"]
+[connection signal="bid_placed" from="Lounge/BidTiles/BidTile2" to="." method="_on_bid_placed"]
+[connection signal="bid_placed" from="Lounge/BidTiles/BidTile3" to="." method="_on_bid_placed"]
+[connection signal="bid_placed" from="Lounge/BidTiles/BidTile4" to="." method="_on_bid_placed"]
+[connection signal="bid_placed" from="Restaurant/BidTiles/BidTile0" to="." method="_on_bid_placed"]
+[connection signal="bid_placed" from="Restaurant/BidTiles/BidTile1" to="." method="_on_bid_placed"]
+[connection signal="bid_placed" from="Restaurant/BidTiles/BidTile2" to="." method="_on_bid_placed"]
+[connection signal="bid_placed" from="Restaurant/BidTiles/BidTile3" to="." method="_on_bid_placed"]
+[connection signal="bid_placed" from="Restaurant/BidTiles/BidTile4" to="." method="_on_bid_placed"]
